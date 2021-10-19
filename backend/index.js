@@ -12,7 +12,7 @@ app.get("/", (req, res, next) => {
 });
 
 app.get("/product", (req, res, next) => {
-res.send([1,3,4,5,6])
+res.send([1,3,4])
 })
 
 const port = process.env.PORT || 5000
