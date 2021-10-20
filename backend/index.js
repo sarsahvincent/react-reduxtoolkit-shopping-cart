@@ -1,5 +1,24 @@
 const express = require('express');
 const cors = require('cors');
+const products = require('./products');
+
+const app = express();
+
+app.use(express.json());
+app.use(cors());
+app.get("/", (req, res)=> {
+    res.send("Welcome to our online shop API...")
+});
+
+app.get('/products', (req, res)=> {
+    res.send(products)
+})
+
+const port = process.env.PORT || 5000;
+app.listen(port, console.log(`Server is runnung on port ${port}`))
+
+/* const express = require('express');
+const cors = require('cors');
 
 
 const app = express();
@@ -12,8 +31,8 @@ app.get("/", (req, res, next) => {
 });
 
 app.get("/product", (req, res, next) => {
-res.send([1,3,4])
+res.send([1,3,4,5])
 })
 
 const port = process.env.PORT || 5000
-app.listen(port, console.log(`Server is runing on port ${port}`))
+app.listen(port, console.log(`Server is runing on port ${port}`)) */
