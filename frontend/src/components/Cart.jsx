@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CartItems from "./CartItems";
 import { Link } from "react-router-dom";
@@ -7,11 +7,16 @@ import {
   decreaseCart,
   increaseCart,
   clearCart,
+  getTotals,
 } from "../features/redux/products/cartSlice";
 
 export default function Cart({ handleAddToCart }) {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getTotals());
+  }, [cart, dispatch]);
 
   const handleRemoveFromCart = (cartItem) => {
     dispatch(removeFromCart(cartItem));
@@ -30,7 +35,7 @@ export default function Cart({ handleAddToCart }) {
   };
   return (
     <div className="cart-container">
-      <> 
+      <>
         <h2>Shopping Cart</h2>
 
         {cart.cartItems?.length === 0 ? (
@@ -63,6 +68,7 @@ export default function Cart({ handleAddToCart }) {
               <h3 className="quantity">Quantity</h3>
               <h3 className="total">Total</h3>
             </div>
+         
 
             <div className="cart-items">
               {cart.cartItems?.map((cartItem) => (
