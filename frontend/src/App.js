@@ -1,4 +1,6 @@
 import "./App.css";
+import { ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   BrowserRouter as Router,
   Route,
@@ -14,6 +16,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <ToastContainer />
         <NavBar />
         <Switch>
           <Route exact path="/" component={Home} />

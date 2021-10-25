@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { cartQuantity } from "../features/redux/products/cartSlice";
 
 function NavBar() {
+  const Quantity = useSelector(cartQuantity);
   return (
     <nav className="nav-bar">
       <Link to="/">

@@ -17,22 +17,3 @@ app.get('/products', (req, res)=> {
 const port = process.env.PORT || 5000;
 app.listen(port, console.log(`Server is runnung on port ${port}`))
 
-/* const express = require('express');
-const cors = require('cors');
-
-
-const app = express();
-
-app.use(express.json());
-app.use(cors());
-
-app.get("/", (req, res, next) => {
-    res.send("Welcome to our online shop API...")
-});
-
-app.get("/product", (req, res, next) => {
-res.send([1,3,4,5])
-})
-
-const port = process.env.PORT || 5000
-app.listen(port, console.log(`Server is runing on port ${port}`)) */
