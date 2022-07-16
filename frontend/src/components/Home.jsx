@@ -28,7 +28,7 @@ function Home() {
         <p>erro ocured</p>
       ) : (
         <>
-          <h2>Mew Arrivals</h2>
+          <h2>New Arrivals</h2>
           <div className="products">
             {data?.map((product) => (
               < ItemCard style={{margin: '20px'}} product={product} handleAddToCart={handleAddToCart} />
