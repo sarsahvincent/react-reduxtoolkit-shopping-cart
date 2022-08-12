@@ -3,7 +3,7 @@ const products = [
     id: 1,
     name: "iPhone 12 Pro",
     desc: "6.1-inch display",
-    price: 999,
+    price: 799,
     image:
       "https://res.cloudinary.com/vincentsarsah/image/upload/v1634665354/vkq8mqdew3c7ihruemg8.jpg",
   },
